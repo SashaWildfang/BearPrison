@@ -1,0 +1,30 @@
+name: BearPrison
+version: '0.9'
+main: com.sasha.bearprison.BearPrison
+depend: [BearEconomy, LuckPerms]
+
+commands:
+  cleardrops:
+    description: Manually wipe all ground items.
+    usage: /cleardrops
+    aliases: [ cd ]
+  combat-timer:
+    description: Check how much time is left on your combat tag
+    aliases: [ctime]
+  rankup:
+    description: Promote yourself to the next rank.
+    usage: /rankup
+  rankupmax:
+    description: Rank up as many times as you can afford instantly.
+    usage: /rankupmax
+    aliases: [rumax, maxrankup]
+  ranks:
+    description: View rank costs.
+    usage: /ranks
+  condense:
+    description: Condenses raw ores into blocks.
+    aliases: [blocks]
+  fix:
+    description: Repairs the item in your hand or inventory.
+    usage: /fix [hand|all]
+    aliases: [repair]

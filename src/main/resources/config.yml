@@ -1,0 +1,187 @@
+messages:
+  prefix: "&8[&eBearPrison&8] "
+  no-permission: "&cYou lack the required clearance."
+  not-player: "&cOnly players can run this command."
+  join-rank-set: "&7Welcome! You have been set to &aRank A&7."
+  rankup-success: "&aSuccessfully ranked up to &e%next_rank%&a!"
+  rankup-broadcast: "&e%player% &ajust ranked up to &e%next_rank%&a!"
+  rankup-max: "&cYou are already at the maximum rank!"
+  rankup-insufficient-funds: "&cYou need &e$%price% &cto rankup to %next_rank%."
+  cleardrops-warning: "&cGround items will be cleared in &e%time% &cseconds!"
+  cleardrops-cleared: "&aSuccessfully removed &e%count% &aground items."
+  cleardrops-threshold: "&cItem limit reached! Removed &e%count% &citems to prevent lag."
+  condense-success: "&aSuccessfully condensed items into &e%count% &ablocks!"
+  condense-none: "&cYou don't have enough items to condense."
+  fix-success: "&aYour item has been fully repaired!"
+  fix-invalid: "&cThe item in your hand cannot be repaired."
+  fix-empty: "&cYou must be holding an item to use this command."
+  fix-cooldown: "&cYou must wait &e%time% &cbefore repairing another item!"
+  fix-all-success: "&aAll repairable items in your inventory have been fixed!"
+  fix-invalid-all: "&cYou do not have any damaged items in your inventory to repair."
+  # Messages for the /ranks command
+  ranks-header: "&e========== &6Server Ranks &e=========="
+  ranks-format: "&e%rank% &7- &a$%cost%"
+  rankup-reminder: "&aYou have enough money to rankup to &e%next_rank% &8(&7Cost: &2$&a%cost%&8)&a! Type &e/rankup &ato rankup."
+  rankupmax-success: "&aSuccessfully ranked up to &e%next_rank% &afor a total of &2$&a%total_cost%&a!"
+  rankupmax-broadcast: "&e%player% &ajust ranked up to &e%next_rank%&a!"
+  # Combat Logg Messages
+  combat-tagged: "&cYou are now in combat! Do not log out or you will die!"
+  combat-tagged-by: "&cYou are now in combat with &e%player%&c! Do not log out!"
+  combat-safe: "&aYou are no longer in combat. You may safely log out."
+  combat-timer-self: "&cYou are in combat for &e%time% &cseconds."
+  combat-timer-other: "&e%player% &cis in combat for &e%time% &cseconds."
+  combat-not-in-combat: "&aYou are not in combat."
+  combat-other-not-in-combat: "&a%player% is not in combat."
+  combat-logged: "&8[&c&l!&8] &c%player% combat logged and was killed!"
+  player-not-found: "&cPlayer &7%player% &cnot found."
+
+# Add this anywhere in your config.yml
+inventory-full:
+  enabled: true
+  cooldown: 3 # Seconds between warnings to prevent spam
+  sound: "block.note_block.bass" # A deep, noticeable sound
+  title: "&c&lINVENTORY FULL"
+  subtitle: "&7Sell your items for profit now"
+
+rankup-reminder:
+  enabled: true
+  interval: 300
+
+settings:
+  # How long (in seconds) the combat tag lasts
+  combat-tag-duration: 15
+
+tab-formats:
+  default: "%luckperms_prefix%&7%player%"
+  rank_a: "%luckperms_prefix%&7%player%"
+  tier1: "%luckperms_prefix%&f%player%"
+  tier2: "%luckperms_prefix%&f%player%"
+  tier3: "%luckperms_prefix%&f%player%"
+  tier4: "%luckperms_prefix%&f%player%"
+  helper: "%luckperms_prefix%&f%player%"
+  mod: "%luckperms_prefix%&f%player%"
+  admin: "%luckperms_prefix%&f%player%"
+  owner: "%luckperms_prefix%&f%player%"
+
+# Define your rank progression.
+# The key (e.g., 'rank_a') must match the LuckPerms group name.
+# 'next' specifies the target group, and 'cost' is the price to rank up.
+ranks:
+  rank_a:
+    next: "rank_b"
+    cost: 500
+  rank_b:
+    next: "rank_c"
+    cost: 1000
+  rank_c:
+    next: "rank_d"
+    cost: 2500
+  rank_d:
+    next: "rank_e"
+    cost: 5000
+  rank_e:
+    next: "rank_f"
+    cost: 10000
+  rank_f:
+    next: "rank_g"
+    cost: 25000
+  rank_g:
+    next: "rank_h"
+    cost: 50000
+  rank_h:
+    next: "rank_i"
+    cost: 75000
+  rank_i:
+    next: "rank_j"
+    cost: 100000
+  rank_j:
+    next: "rank_k"
+    cost: 250000
+  rank_k:
+    next: "rank_l"
+    cost: 500000
+  rank_l:
+    next: "rank_m"
+    cost: 750000
+  rank_m:
+    next: "rank_n"
+    cost: 1000000
+  rank_n:
+    next: "rank_o"
+    cost: 2500000
+  rank_o:
+    next: "rank_p"
+    cost: 5000000
+  rank_p:
+    next: "rank_q"
+    cost: 7500000
+  rank_q:
+    next: "rank_r"
+    cost: 10000000
+  rank_r:
+    next: "rank_s"
+    cost: 25000000
+  rank_s:
+    next: "rank_t"
+    cost: 50000000
+  rank_t:
+    next: "rank_u"
+    cost: 75000000
+  rank_u:
+    next: "rank_v"
+    cost: 100000000
+  rank_v:
+    next: "rank_w"
+    cost: 250000000
+  rank_w:
+    next: "rank_x"
+    cost: 500000000
+  rank_x:
+    next: "rank_y"
+    cost: 750000000
+  rank_y:
+    next: "rank_z"
+    cost: 1000000000
+  rank_z:
+    next: "none"
+    cost: 0
+
+  clearlag:
+    enabled: true
+    interval: 300 # Time in seconds between auto-clears (300s = 5 minutes)
+    threshold: 500 # If there are more than 500 items on the ground, force an instant clear
+    warnings:
+      - 60
+      - 30
+      - 10
+      - 5
+      - 4
+      - 3
+      - 2
+      - 1
+
+tablist:
+  enabled: true
+  header:
+    - ""
+    - "&9&lBEAR NATION"
+    - "&7PRISON REALM"
+    - ""
+    - "%dynamic_tags%"
+    - ""
+  footer:
+    - ""
+    - "&f%rotating_message%"
+    - ""
+    - "&7You are currently playing &9PRISON"
+    - "&7There are &e%online% &7players online!"
+    - ""
+    - "&8[%loading_bar%&8]"
+    - ""
+  rotating-messages:
+    interval: 100 # How many ticks before the text changes (100 = 5 seconds)
+    messages:
+      - "Welcome to Bear Nation! Explore games and features."
+      - "Join our Discord: discord.gg/bearnation"
+      - "Support us at /store and grab cool ranks!"
+      - "Vote daily at /vote and earn rewards."
